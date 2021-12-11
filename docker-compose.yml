@@ -1,0 +1,36 @@
+version: "3.7"
+services: 
+  
+  wildfly:
+    build:
+      context: .
+      args: 
+        BASE_TAG: 11
+        WILDFLY_VERSION: 25.0.0.Final
+    volumes: 
+      - deploy-target:/opt/wildfly/standalone/deployments
+    ports: 
+      - "8080:8080"
+      - "8443:8443"
+      - "9990:9990"
+      - "9993:9993"
+
+  # app-build:
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile.dev.build
+  #     args:
+  #       MAVEN_TAG: 3.6.3-openjdk-8
+  #   restart: on-failure
+  #   volumes: 
+  #     - ./app/app001:/usr/src/app/app001
+  #     - ./app/app002:/usr/src/app/app002
+  #     - ./app/app003:/usr/src/app/app003
+  #     - ./app/app004:/usr/src/app/app004
+  #     - local-repo:/usr/share/maven/ref/repository
+  #     - deploy-target:/app/deployments
+  #   command: sh -c "./backend-build.sh"
+
+volumes:
+  deploy-target:
+  local-repo:

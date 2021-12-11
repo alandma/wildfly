@@ -1,0 +1,5 @@
+ARG MAVEN_TAG
+FROM maven:${MAVEN_TAG}
+WORKDIR /usr/src/app/
+
+COPY backend-build.dev.sh ./backend-build.sh
