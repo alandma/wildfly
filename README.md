@@ -4,7 +4,7 @@ Criação de wildfly para rodar apps Java em modo padrão `standalone` todas as 
 
 O arquivo atual (standalone.xml) foi adicionado a configuração e os drivers para conectar a um banco de dados postgresql (`configs/org`).
 
-A versão do JDK(Jboss base), Wildfly e maven devem ser definidos com os seguintes _**args**_:
+A versão do JDK(Jboss base), Wildfly e Maven devem ser definidos com os seguintes _**args**_:
 
 > **BASE_TAG**:  
 Versão da base para o wildfly, isso ira definir o JDK base.
